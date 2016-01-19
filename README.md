@@ -2,7 +2,7 @@
 # LXD Alpine Linux image builder
 
 This script provides a way to create [Alpine Linux](http://alpinelinux.org/)
-images for their use with [LXD](ihttps://linuxcontainers.org/lxd/).
+images for their use with [LXD](https://linuxcontainers.org/lxd/).
 It's based off the LXC templates.
 
 The image will be built just by installing the `alpine-base` meta-package.
