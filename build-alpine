@@ -18,7 +18,7 @@ get_static_apk () {
     auto_repo_dir=
 
     if [ -z "$repository" ]; then
-        url=http://wiki.alpinelinux.org/cgi-bin/dl.cgi
+        url=http://dl-cdn.alpinelinux.org/alpine/
 	yaml_path="latest-stable/releases/$apk_arch/latest-releases.yaml"
         if [ -z "$release" ]; then
             echo -n "Determining the latest release... "
