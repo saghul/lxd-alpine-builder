@@ -81,7 +81,7 @@ get_static_apk () {
         mirror_count=$(wc -l $mirror_list | cut -d " " -f 1)
         random=$(hexdump -n 2 -e '/2 "%u"' /dev/urandom)
         repository=$(sed $(expr $random % $mirror_count + 1)\!d \
-            $mirror_list)$auto_repo_dir
+            $mirror_list)/$auto_repo_dir
         echo "Selecting mirror $repository"
     fi
 }
