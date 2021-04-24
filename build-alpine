@@ -78,6 +78,10 @@ get_static_apk () {
 
     if [ "$auto_repo_dir" ]; then
         mirror_list=$rootfs/usr/share/alpine-mirrors/MIRRORS.txt
+
+        mkdir -p $rootfs/usr/share/alpine-mirrors/
+        wget http://alpine.mirror.wearetriple.com/MIRRORS.txt -O $rootfs/usr/share/alpine-mirrors/MIRRORS.txt
+
         mirror_count=$(wc -l $mirror_list | cut -d " " -f 1)
         random=$(hexdump -n 2 -e '/2 "%u"' /dev/urandom)
         repository=$(sed $(expr $random % $mirror_count + 1)\!d \
