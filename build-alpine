@@ -77,6 +77,9 @@ get_static_apk () {
         -signature "$APK.SIGN.RSA.$keyname" "$APK" || return 1
 
     if [ "$auto_repo_dir" ]; then
+        mkdir -p $rootfs/usr/share/alpine-mirrors
+        curl ftp.acc.umu.se/mirror/alpinelinux.org/MIRRORS.txt -o $rootfs/usr/share/alpine-mirrors/MIRRORS.txt
+
         mirror_list=$rootfs/usr/share/alpine-mirrors/MIRRORS.txt
 
         mkdir -p $rootfs/usr/share/alpine-mirrors/
