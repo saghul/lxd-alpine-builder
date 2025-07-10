@@ -65,7 +65,7 @@ get_static_apk () {
     rm -f "$rootfs"/.[A-Z]*
 
     # verify checksum of the key
-    keyname=$(echo $rootfs/sbin/apk.static.*.pub | sed 's/.*\.SIGN\.RSA\.//')
+    keyname=$(basename $rootfs/sbin/apk.static.*.pub | sed 's/.*\.SIGN\.RSA\.//')
     checksum=$(echo "$key_sha256sums" |  grep -w "$keyname")
     if [ -z "$checksum" ]; then
         echo "ERROR: checksum is missing for $keyname"
